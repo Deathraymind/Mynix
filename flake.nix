@@ -6,7 +6,7 @@
     
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     # home-manager, used for managing user configuration
-    catppuccin.url = "github:catppuccin/nix";
+    
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       # The `follows` keyword in inputs is used for inheritance.

@@ -46,6 +46,7 @@
     firefox
     dolphin
     gnome.nautilus
+    gnome.gnome-tweaks
   ];
 
   # basic configuration of git, please change to your own

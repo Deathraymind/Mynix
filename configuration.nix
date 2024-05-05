@@ -147,6 +147,7 @@
     qt6ct
     
     hyprland
+    gnome.gnome-tweaks
 
 
   ];

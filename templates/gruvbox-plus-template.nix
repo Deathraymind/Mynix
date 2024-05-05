@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
     src = pkgs.fetchurl {
         url = "https://github.com/SylEleuth/gruvbox-plus-icon-pack/releases/download/v5.3.1/gruvbox-plus-icon-pack-5.3.1.zip";
         # nix shell nixpkgs#nix-prefetch
-        # nix-prefetch-url "youre zip url"
+        # nix-prefetch-url "youre zip url" only works with zip
         sha256 = "1mi6197hrwnkm2109pajb3vkwlddrak109281dbwgl1gagklsxny";
     };
 
