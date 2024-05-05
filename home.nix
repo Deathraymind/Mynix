@@ -4,7 +4,7 @@
 {
    imports = [
     # ./startup.nix  # Adjust the path as necessary
-    # ./theme.nix
+    ./theme.nix
   ];
 
 home.file."/home/bowyn/.profile".source = ./home/.profile;  # Adjust the path to where you store .profile in your flake
