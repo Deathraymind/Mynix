@@ -54,7 +54,7 @@
     firefox
     dolphin
     gnome.nautilus
-    gnome.gnome-tweaks
+    hyprpaper
   ];
 
   # basic configuration of git, please change to your own
