@@ -57,6 +57,8 @@ home.file."/home/bowyn/.config/kitty" = { # this is where you want the file
     dconf
     glib
     gsettings-desktop-schemas
+    # Browser
+    firefox
   ];
 
   # basic configuration of git, please change to your own
