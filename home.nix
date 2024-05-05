@@ -1,8 +1,10 @@
+# home.nix
 { config, pkgs, lib, ... }:
 
 {
    imports = [
     # ./startup.nix  # Adjust the path as necessary
+    # ./theme.nix
   ];
 
 home.file."/home/bowyn/.profile".source = ./home/.profile;  # Adjust the path to where you store .profile in your flake
@@ -35,10 +37,6 @@ home.file."/home/bowyn/.config/waybar" = { # this is where you want the file
 
   
 
-  gtk.enable = true;
-  qt.enable = true;
-  qt.platformTheme = "gtk";
-  qt.style.name = "adwaita-dark";
 
   # set cursor size and dpi for 4k monitor
   xresources.properties = {
@@ -64,6 +62,8 @@ home.file."/home/bowyn/.config/waybar" = { # this is where you want the file
     gsettings-desktop-schemas
     # Browser
     firefox
+    dolphin
+    gnome.nautilus
   ];
 
   # basic configuration of git, please change to your own
@@ -87,4 +87,6 @@ home.file."/home/bowyn/.config/waybar" = { # this is where you want the file
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.starship.enable = false;
+
+
 }
