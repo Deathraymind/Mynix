@@ -22,6 +22,11 @@ home.file."/home/bowyn/.config/kitty" = { # this is where you want the file
   recursive = true; # recusris the e ntire directory
 };
 
+home.file."/home/bowyn/.config/waybar" = { # this is where you want the file
+  source = ./home/config/waybar; # this is where you are pulling the file from
+  recursive = true; # recusris the e ntire directory
+};
+
 
   # TODO please change the username & home directory to your own
   home.username = "bowyn";
