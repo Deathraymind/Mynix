@@ -9,6 +9,14 @@
     
   ];
 
+  qt = {
+  enable = true;
+
+  platformTheme = "qtct";
+
+  
+};
+
   home.file."/home/bowyn/.profile".source = ./home/.profile;  # Adjust the path to where you store .profile in your flake
 
   home.file."/home/bowyn/.config/" = { # this is where you want the file
