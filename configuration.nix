@@ -11,6 +11,12 @@
       
     ];
 
+nixpkgs.config.packageOverrides = pkgs: {
+    unstable = import <nixos-unstable> {
+        config = config.nixpkgs.config;
+    };
+};
+
 
   
 
@@ -148,6 +154,7 @@
     
     hyprland
     neofetch
+    unstable.hyprlock
 
 
   ];
@@ -156,6 +163,8 @@
   fonts.fonts = with pkgs; [
     nerdfonts
   ];
+
+  
 
 
 

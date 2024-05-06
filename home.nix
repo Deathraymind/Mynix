@@ -7,6 +7,7 @@
     # ./startup.nix  # Adjust the path as necessary
     ./theme.nix
     
+    
   ];
 
   qt = {
@@ -55,7 +56,10 @@
     dolphin
     gnome.nautilus
     hyprpaper
+    
   ];
+
+
 
   # basic configuration of git, please change to your own
   programs.git = {

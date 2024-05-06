@@ -4,9 +4,12 @@
 
   inputs = {
     
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     # home-manager, used for managing user configuration
     
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       # The `follows` keyword in inputs is used for inheritance.
@@ -35,6 +38,8 @@
 
            
             home-manager.users.bowyn = import /etc/nixos/home.nix;
+            
+
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
