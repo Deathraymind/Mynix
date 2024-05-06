@@ -89,7 +89,7 @@
       },
   
       "hyprland/workspaces": {
-          "disable-scroll": true,
+          "disable-scroll": false,
           "rotate": 0,
           "all-outputs": true,
           "active-only": false,
@@ -271,7 +271,7 @@
           "format": "{}",
           "rotate": 0,
           "exec": "echo ; echo  logout",
-          "on-click": "/home/bowyn/.config/hyprdots/scripts/logoutlaunch.sh 2",
+          "on-click": "hyprlock",
           "on-click-right": "/home/bowyn/.config/hyprdots/scripts/logoutlaunch.sh 1",
           "interval" : 86400, // once every day
           "tooltip": true
