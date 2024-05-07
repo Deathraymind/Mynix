@@ -4,18 +4,13 @@
 
   inputs = {
     
-    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # unstable channel from nix
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11"; # nixos stable repository
     
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    # home-manager, used for managing user configuration
     
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
-      # The `follows` keyword in inputs is used for inheritance.
-      # Here, `inputs.nixpkgs` of home-manager is kept consistent with
-      # the `inputs.nixpkgs` of the current flake,
-      # to avoid problems caused by different versions of nixpkgs.b
+      url = "github:nix-community/home-manager/release-23.11"; # this downloads the homemanager from github
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -37,11 +32,8 @@
             
 
            
-            home-manager.users.bowyn = import /etc/nixos/home.nix;
+            home-manager.users.bowyn = import /etc/nixos/home.nix; # This lines calls the file home.nix 
             
-
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
       };

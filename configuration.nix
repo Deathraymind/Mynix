@@ -5,9 +5,9 @@
 {
   imports =
     [ 
-      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master") # this includes the nix os vs code server. 
+      
+      ./hardware-configuration.nix # Include the results of the hardware scan.
       
     ];
 
@@ -109,8 +109,6 @@ nixpkgs.config.packageOverrides = pkgs: {
 #                                     `---'          
   
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
     git
     kitty
     vscode
@@ -129,12 +127,8 @@ nixpkgs.config.packageOverrides = pkgs: {
     blueman
     brightnessctl
     
-    # qt support
+    dunst # this is the notification daemon.
     
-
-    dunst
-    wlogout
-    swww
 
     # screenshot
     grimblast
@@ -156,16 +150,16 @@ nixpkgs.config.packageOverrides = pkgs: {
     qt5ct
     qt6ct
     
-    hyprland
+    hyprland 
     neofetch
-    unstable.hyprlock
+    unstable.hyprlock # The unstable. is puleld from the unstable channle of nixos
 
 
   ];
 
 
   fonts.fonts = with pkgs; [
-    nerdfonts
+    nerdfonts # this pulls the nerdfonts from the nixos and makes it available. 
   ];
 
   
@@ -180,12 +174,12 @@ nixpkgs.config.packageOverrides = pkgs: {
 #.-'    |\   --.|  |     \    /  |  |\ `--.\   --..-'  `) 
 #`-----'  `----'`--'      `--'   `--' `---' `----'`----'  
                                                          
-  services.openssh.enable = true;
+  services.openssh.enable = true; # enables the sshd server on the computer
   services.openssh.permitRootLogin = "yes";  # // or "no" if you want to disable root login
   services.openssh.passwordAuthentication = true; # // or false to disable password authentication
-  # STUFF
-  services.vscode-server.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  services.vscode-server.enable = true; # this enables the vs code server. 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; # this is a nixos experimental feature called flakes
 
 
 
@@ -206,7 +200,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   # Enable the OpenSSH daemon.
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true; # Enables dhcp and ethernet support IMPORTANT
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
