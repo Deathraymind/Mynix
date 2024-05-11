@@ -4,11 +4,23 @@
 {
    
    imports = [
+<<<<<<< HEAD
     ./theme.nix # Calls the files theme.nix which contains the scripts and packages for theming.
   ];
 
   qt = {
   enable = true; # This enables qt themeing for KDE applications. 
+=======
+    # ./startup.nix  # Adjust the path as necessary
+    ./theme.nix
+    
+    
+  ];
+
+  qt = {
+  enable = true;
+
+>>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
   platformTheme = "qtct";
 
   
