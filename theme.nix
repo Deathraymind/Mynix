@@ -3,10 +3,6 @@
 { config, pkgs, lib, ... }: 
 {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
 gtk = {
     enable = true;
     # theme
