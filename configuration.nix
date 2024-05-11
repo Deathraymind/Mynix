@@ -161,6 +161,7 @@ nixpkgs.config.packageOverrides = pkgs: {
     appimage-run
     flatpak
     unstable.alvr
+    home-manager
 
   ];
 
@@ -197,6 +198,7 @@ nixpkgs.config.packageOverrides = pkgs: {
 };
 
 
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -207,6 +209,11 @@ nixpkgs.config.packageOverrides = pkgs: {
   # systemctl --user restart pipewire.service
   # systemctl --user restart pipewire-pulse.service
   };
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+
 
   programs.steam = {
     enable = true;
