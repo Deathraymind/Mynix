@@ -156,6 +156,8 @@ nixpkgs.config.packageOverrides = pkgs: {
     pavucontrol 
     pipewire
     steam
+    xorg.xrandr
+    obs-studio
 
 
   ];
@@ -202,7 +204,13 @@ nixpkgs.config.packageOverrides = pkgs: {
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   }; 
  
+hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
+services.xserver.videoDrivers = ["amdgpu"];
 
 
   # Some programs need SUID wrappers, can be configured further or are
