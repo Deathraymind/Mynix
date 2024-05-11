@@ -153,6 +153,9 @@ nixpkgs.config.packageOverrides = pkgs: {
     hyprland 
     neofetch
     unstable.hyprlock # The unstable. is puleld from the unstable channle of nixos
+    pavucontrol 
+    pipewire
+    steam
 
 
   ];
@@ -181,8 +184,23 @@ nixpkgs.config.packageOverrides = pkgs: {
   services.vscode-server.enable = true; # this enables the vs code server. 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # this is a nixos experimental feature called flakes
 
+ 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = false;
+  # If you want to use JACK applications, uncomment this
+  # systemctl --user restart pipewire.service
+  # systemctl --user restart pipewire-pulse.service
+  };
 
-
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
 
 
