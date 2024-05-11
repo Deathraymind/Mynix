@@ -158,7 +158,9 @@ nixpkgs.config.packageOverrides = pkgs: {
     steam
     xorg.xrandr
     obs-studio
-
+    appimage-run
+    flatpak
+    unstable.alvr
 
   ];
 
@@ -178,7 +180,9 @@ nixpkgs.config.packageOverrides = pkgs: {
 #`.  `-. | .-. :|  .--' \  `'  / ,--.| .--'| .-. :(  .-'  
 #.-'    |\   --.|  |     \    /  |  |\ `--.\   --..-'  `) 
 #`-----'  `----'`--'      `--'   `--' `---' `----'`----'  
-                                                         
+
+  services.flatpak.enable = true;
+
   services.openssh.enable = true; # enables the sshd server on the computer
   services.openssh.permitRootLogin = "yes";  # // or "no" if you want to disable root login
   services.openssh.passwordAuthentication = true; # // or false to disable password authentication
@@ -186,7 +190,13 @@ nixpkgs.config.packageOverrides = pkgs: {
   services.vscode-server.enable = true; # this enables the vs code server. 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # this is a nixos experimental feature called flakes
 
- 
+ networking.firewall = {
+  enable = true; # Make sure the firewall is enabled
+  allowedTCPPorts = [ 9943 9944 ]; # List of TCP ports to open
+  allowedUDPPorts = [ 9943 9944 ]; # List of UDP ports to open, if needed
+};
+
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
