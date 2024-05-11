@@ -67,7 +67,7 @@
   # Home manage version
   home.stateVersion = "23.11";
 
-  # Let home Manager install and manage itself.
+  # Let home Manager install and manage itself2.
   programs.home-manager.enable = true;
   programs.starship.enable = false;
 
