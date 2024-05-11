@@ -5,15 +5,9 @@
 {
   imports =
     [ 
-<<<<<<< HEAD
       (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master") # this includes the nix os vs code server. 
       
       ./hardware-configuration.nix # Include the results of the hardware scan.
-=======
-      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
       
     ];
 
@@ -115,11 +109,6 @@ nixpkgs.config.packageOverrides = pkgs: {
 #                                     `---'          
   
   environment.systemPackages = with pkgs; [
-<<<<<<< HEAD
-=======
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
     git
     kitty
     vscode
@@ -138,19 +127,9 @@ nixpkgs.config.packageOverrides = pkgs: {
     blueman
     brightnessctl
     
-<<<<<<< HEAD
     dunst # this is the notification daemon.
     
 
-=======
-    # qt support
-    
-
-    dunst
-    wlogout
-    swww
-
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
     # screenshot
     grimblast
     slurp
@@ -171,29 +150,16 @@ nixpkgs.config.packageOverrides = pkgs: {
     qt5ct
     qt6ct
     
-<<<<<<< HEAD
     hyprland 
     neofetch
     unstable.hyprlock # The unstable. is puleld from the unstable channle of nixos
-    pavucontrol 
-    pipewire
-    steam
-=======
-    hyprland
-    neofetch
-    unstable.hyprlock
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
 
 
   ];
 
 
   fonts.fonts = with pkgs; [
-<<<<<<< HEAD
     nerdfonts # this pulls the nerdfonts from the nixos and makes it available. 
-=======
-    nerdfonts
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
   ];
 
   
@@ -208,7 +174,6 @@ nixpkgs.config.packageOverrides = pkgs: {
 #.-'    |\   --.|  |     \    /  |  |\ `--.\   --..-'  `) 
 #`-----'  `----'`--'      `--'   `--' `---' `----'`----'  
                                                          
-<<<<<<< HEAD
   services.openssh.enable = true; # enables the sshd server on the computer
   services.openssh.permitRootLogin = "yes";  # // or "no" if you want to disable root login
   services.openssh.passwordAuthentication = true; # // or false to disable password authentication
@@ -216,34 +181,8 @@ nixpkgs.config.packageOverrides = pkgs: {
   services.vscode-server.enable = true; # this enables the vs code server. 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # this is a nixos experimental feature called flakes
 
- 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = false;
-  # If you want to use JACK applications, uncomment this
-  # systemctl --user restart pipewire.service
-  # systemctl --user restart pipewire-pulse.service
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-=======
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";  # // or "no" if you want to disable root login
-  services.openssh.passwordAuthentication = true; # // or false to disable password authentication
-  # STUFF
-  services.vscode-server.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
 
 
 
@@ -261,11 +200,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   # Enable the OpenSSH daemon.
 
   # Enable networking
-<<<<<<< HEAD
   networking.networkmanager.enable = true; # Enables dhcp and ethernet support IMPORTANT
-=======
-  networking.networkmanager.enable = true;
->>>>>>> 8538cfd25904310cafc2d19c18be1c440c389b87
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
