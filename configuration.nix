@@ -162,6 +162,8 @@ nixpkgs.config.packageOverrides = pkgs: {
     flatpak
     unstable.alvr
     home-manager
+    htop
+    playerctl
 
   ];
 
