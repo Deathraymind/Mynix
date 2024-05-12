@@ -131,7 +131,7 @@ nixpkgs.config.packageOverrides = pkgs: {
     
 
     # screenshot
-    grimblast
+    grim
     slurp
     swappy
     cliphist
