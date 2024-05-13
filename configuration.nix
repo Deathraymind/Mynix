@@ -86,16 +86,6 @@ nixpkgs.config.packageOverrides = pkgs: {
     xwayland.enable = true;
   };
 
- 
- 
-   # Disable X server as Hyprland is a Wayland compositor
-
-  # Configure SDDM correctly within the displayManager option
-
-
-
-
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -171,12 +161,6 @@ nixpkgs.config.packageOverrides = pkgs: {
   fonts.fonts = with pkgs; [
     nerdfonts # this pulls the nerdfonts from the nixos and makes it available. 
   ];
-
-  
-
-
-
-
 
 #,---.                          ,--.                     
 #'   .-'  ,---. ,--.--.,--.  ,--.`--' ,---. ,---.  ,---.  
