@@ -22,8 +22,6 @@ nixpkgs.config.packageOverrides = pkgs: {
 };
 
 
-  
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -210,7 +208,6 @@ hardware.opengl = {
   };
 
 services.xserver.videoDrivers = ["amdgpu"];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
