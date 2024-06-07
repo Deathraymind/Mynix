@@ -5,12 +5,12 @@
   inputs = {
     
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # unstable channel from nix
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11"; # nixos stable repository
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05"; # nixos stable repository
     
     
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11"; # this downloads the homemanager from github
+      url = "github:nix-community/home-manager/release-24.05"; # this downloads the homemanager from github
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

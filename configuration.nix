@@ -11,6 +11,9 @@
       
     ];
 
+
+    
+
 # run these two commands
 # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
 # sudo nix-channel --update
@@ -29,7 +32,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. 
 
-  # Configure network proxy if necessary
+  # Configure w network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
@@ -62,7 +65,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   users.users.bowyn = {
     isNormalUser = true;
     description = "bowyn";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [];
   };
 
@@ -148,7 +151,19 @@ nixpkgs.config.packageOverrides = pkgs: {
     home-manager
     htop
     playerctl
-
+    flatpak
+    r2modman
+    # Virtual Machine
+    qemu
+    discord
+    r2mod_cli
+    unstable.r2modman
+    python3
+    python311Packages.pip
+    flatpak
+    prismlauncher
+    filezilla
+    gnome.gnome-terminal
   ];
 
 
@@ -173,10 +188,16 @@ nixpkgs.config.packageOverrides = pkgs: {
 
  networking.firewall = {
   enable = true; # Make sure the firewall is enabled
-  allowedTCPPorts = [ 9943 9944 ]; # List of TCP ports to open
-  allowedUDPPorts = [ 9943 9944 ]; # List of UDP ports to open, if needed
+  allowedTCPPorts = [ 9943 9944 51112]; # List of TCP ports to open
+  allowedUDPPorts = [ 9943 9944 51112]; # List of UDP ports to open, if needed
+ 
 };
 
+
+# Virtual Machines
+
+virtualisation.libvirtd.enable = true;
+programs.virt-manager.enable = true;
 
 
   services.pipewire = {
@@ -209,6 +230,7 @@ hardware.opengl = {
 
 services.xserver.videoDrivers = ["amdgpu"];
 
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -220,6 +242,13 @@ services.xserver.videoDrivers = ["amdgpu"];
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
+
+  
+  nixpkgs.config.permittedInsecurePackages = [
+ "electron-25.9.0"
+  ];
+
+
 
   # Enable networking
   networking.networkmanager.enable = true; # Enables dhcp and ethernet support IMPORTANT
@@ -235,5 +264,5 @@ services.xserver.videoDrivers = ["amdgpu"];
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 }
