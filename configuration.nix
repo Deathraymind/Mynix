@@ -164,6 +164,8 @@ nixpkgs.config.packageOverrides = pkgs: {
     prismlauncher
     filezilla
     gnome.gnome-terminal
+    gnome.gnome-disk-utility
+    udisks2
   ];
 
 
@@ -175,7 +177,8 @@ nixpkgs.config.packageOverrides = pkgs: {
 #'   .-'  ,---. ,--.--.,--.  ,--.`--' ,---. ,---.  ,---.  
 #`.  `-. | .-. :|  .--' \  `'  / ,--.| .--'| .-. :(  .-'  
 #.-'    |\   --.|  |     \    /  |  |\ `--.\   --..-'  `) 
-#`-----'  `----'`--'      `--'   `--' `---' `----'`----'  
+#`-----'  `----'`--'      `--'   `--' `---' `----'`----' 
+  services.udisks2.enable = true; 
 
   services.flatpak.enable = true;
 
