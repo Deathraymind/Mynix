@@ -2,6 +2,7 @@
 { config, pkgs, inputs, lib, ... }:
 
 
+
 {
   imports =
     [ 
@@ -12,7 +13,7 @@
     ];
 
 
-    
+   
 
 # run these two commands
 # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
@@ -122,6 +123,7 @@ nixpkgs.config.packageOverrides = pkgs: {
     slurp
     swappy
     cliphist
+    hyprpicker
 
     # dependencies
     polkit-kde-agent
@@ -166,11 +168,34 @@ nixpkgs.config.packageOverrides = pkgs: {
     gnome.gnome-terminal
     gnome.gnome-disk-utility
     udisks2
+    cava
+    obsidian
+
+    # Pytorch/Skynet
+    python3
+    python3
+    python3Packages.pytorch
+
+    remmina
+    
+    polkit
+    lxqt.lxqt-policykit
+
+    krita
+    cura
+    
+    # rocmPackages.rocblas
+    # rocmPackages.miopen
+    # rocmPackages.hipfft
+    # rocmPackages.hipcub
+
+    # rocm-opencl-runtime
+    
   ];
 
 
   fonts.fonts = with pkgs; [
-    nerdfonts # this pulls the nerdfonts from the nixos and makes it available. 
+     nerdfonts # this pulls the nerdfonts from the nixos and makes it available. 
   ];
 
 #,---.                          ,--.                     
@@ -179,6 +204,8 @@ nixpkgs.config.packageOverrides = pkgs: {
 #.-'    |\   --.|  |     \    /  |  |\ `--.\   --..-'  `) 
 #`-----'  `----'`--'      `--'   `--' `---' `----'`----' 
   services.udisks2.enable = true; 
+
+  security.polkit.enable = true;
 
   services.flatpak.enable = true;
 

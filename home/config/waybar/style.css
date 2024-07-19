@@ -7,17 +7,13 @@
     min-height: 10px;
 }
 
-@define-color bar-bg rgba(0, 0, 0, 0);
-
-@define-color main-bg #11111b;
-@define-color main-fg #cdd6f4;
-
-@define-color wb-act-bg #a6adc8;
-@define-color wb-act-fg #313244;
-
-@define-color wb-hvr-bg #f5c2e7;
-@define-color wb-hvr-fg #313244;
-
+@define-color bar-bg rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+@define-color main-bg rgba(17, 17, 27, 0.9); /* Slightly transparent main background */
+@define-color main-fg #ff0000; /* Red for foreground text */
+@define-color wb-act-bg rgba(255, 0, 0, 0.5); /* Red semi-transparent active background */
+@define-color wb-act-fg #ffffff; /* White for active foreground text */
+@define-color wb-hvr-bg rgba(255, 0, 0, 0.3); /* Red semi-transparent hover background */
+@define-color wb-hvr-fg #ffffff; /* White for hover foreground text */
 
 window#waybar {
     background: @bar-bg;
@@ -26,15 +22,15 @@ window#waybar {
 tooltip {
     background: @main-bg;
     color: @main-fg;
-    border-radius: 7px;
+    border-radius: 0px;
     border-width: 0px;
 }
 
 #workspaces button {
     box-shadow: none;
-	text-shadow: none;
+    text-shadow: none;
     padding: 0px;
-    border-radius: 9px;
+    border-radius: 0px;
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 0px;
@@ -42,6 +38,7 @@ tooltip {
     padding-right: 3px;
     margin-right: 0px;
     color: @main-fg;
+    background: rgba(255, 0, 0, 0.1); /* Red semi-transparent accent */
     animation: ws_normal 20s ease-in-out 1;
 }
 
@@ -54,6 +51,7 @@ tooltip {
     margin-right: 3px;
     animation: ws_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
@@ -61,39 +59,43 @@ tooltip {
     color: @wb-hvr-fg;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    border-radius: 0px;
 }
 
 #taskbar button {
     box-shadow: none;
-	text-shadow: none;
+    text-shadow: none;
     padding: 0px;
-    border-radius: 9px;
+    border-radius: 0px;
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 0px;
     padding-left: 3px;
     padding-right: 3px;
     margin-right: 0px;
-    color: @wb-color;
+    color: @main-fg;
+    background: rgba(255, 0, 0, 0.1); /* Red semi-transparent accent */
     animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
     background: @wb-act-bg;
-    color: @wb-act-color;
+    color: @wb-act-fg;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
     margin-right: 3px;
     animation: tb_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    border-radius: 0px;
 }
 
 #taskbar button:hover {
     background: @wb-hvr-bg;
-    color: @wb-hvr-color;
+    color: @wb-hvr-fg;
     animation: tb_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    border-radius: 0px;
 }
 
 #backlight,
@@ -130,10 +132,11 @@ tooltip {
 #custom-rr_end {
     color: @main-fg;
     background: @main-bg;
-    opacity: 1;
+    opacity: 0.9; /* Slight transparency */
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
+    border-radius: 0px;
 }
 
 #workspaces,
@@ -179,4 +182,12 @@ tooltip {
 
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
+}
+
+#tray .item {
+    background: rgba(255, 0, 0, 0.1); /* Red semi-transparent background for tray items */
+    color: @main-fg;
+    border-radius: 0px;
+    margin: 2px;
+    padding: 2px;
 }
